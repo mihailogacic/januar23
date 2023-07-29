@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show all</title>
+    <link rel="stylesheet" href="../static/css/ispit.css">
+</head>
+<body>
+    {%if 'index' in session %}
+    <a href="/logout">Logout</a>
+    {%else%}
+    <a href="/login">Login</a><br>
+    <a href="/register">Register</a>
+    {%endif%}
+    <hr>
+    <table>
+        <tr>
+            <th>Index</th>
+            <th>Email</th>
+            <th>Ime i prezime</th>
+            <th>Godina rodjenja</th>
+            {%if 'index' in session%}
+            <th colspan="2">Opcije</th>
+            {%endif%}
+        </tr>
+        {%for korisnik in korisnici%}
+        <tr>
+            <td>{{korisnik.get_index()}}</td>
+            <td>{{korisnik.get_email()}}</td>
+            <td>{{korisnik.get_ime_prezime()}}</td>
+            <td>{{korisnik.get_godina_rodjenja()}}</td>
+            {%if 'index' in session%}
+            <td><a href="/update/{{korisnik.get_index()}}">Update</a></td>
+            <td><a href="/profil/{{korisnik.get_index()}}">Profil korisnika</a></td>
+            {%endif%}
+        </tr>
+        {%endfor%}
+    </table>
+</body>
+</html>

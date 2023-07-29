@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../static/css/ispit.css">
+</head>
+<body>
+    <form action="/login" method="POST">
+        <p>{{greska}}</p>
+        <p>
+            <label for="index">Index:</label>
+            <input type="text" name="index" id="index">
+        </p>
+        <p>
+            <label for="sifra">Sifra:</label>
+            <input type="password" name="sifra" id="sifra">
+        </p>
+        <p><input type="submit" value="Potvrdi"></p>
+    </form>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update</title>
+</head>
+<body>
+    <form action="/update/{{korisnik.get_index()}}" method="post">
+		<p>{{greska}}</p>
+		<p>
+			<label for="index">Index:</label>
+			<input type="text" name="index" id="index" readonly value="{{korisnik.get_index()}}">
+		</p>
+		<p>
+			<label for="email">Email:</label>
+			<input type="text" name="email" id="email" value="{{korisnik.get_email()}}">
+		</p>
+		<p>
+			<label for="ime_prezime">Ime i prezime:</label>
+			<input type="text" name="ime_prezime" value="{{korisnik.get_ime_prezime()}}">
+		</p>
+		<p>
+			<label for="sifra">Sifra:</label>
+			<input type="password" name="sifra" id="sifra">
+		</p>
+		<p>
+			<label for="godina_rodjenja">Godina rodjenja:</label>
+			<input type="number" name="godina_rodjenja" id="godina_rodjenja" value="{{korisnik.get_godina_rodjenja()}}">
+		</p>
+		<p><input type="submit" value="Potvrdi"></p>
+	</form>
+</body>
+</html>
